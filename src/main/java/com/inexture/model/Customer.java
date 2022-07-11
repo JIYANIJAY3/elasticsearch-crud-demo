@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
+import org.springframework.data.elasticsearch.annotations.Field;
+import org.springframework.data.elasticsearch.annotations.FieldType;
 
 @Document(indexName = "customer_details")
 @Data
@@ -17,5 +19,8 @@ public class Customer {
     private String firstName;
     private String lastName;
     private String email;
+
+    @Field(type = FieldType.Nested)
+    private CustomerAddress customerAddress;
 
 }

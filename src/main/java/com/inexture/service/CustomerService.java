@@ -1,6 +1,7 @@
 package com.inexture.service;
 
 import com.inexture.model.Customer;
+import org.springframework.data.elasticsearch.core.SearchHit;
 
 import java.util.List;
 import java.util.Optional;

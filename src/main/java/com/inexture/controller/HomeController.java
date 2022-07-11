@@ -24,7 +24,7 @@ public class HomeController {
         }
         catch (Exception e)
         {
-            return new ResponseEntity<>(null,HttpStatus.INTERNAL_SERVER_ERROR);
+            return new ResponseEntity<>(e,HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
@@ -36,7 +36,7 @@ public class HomeController {
         }
         catch (Exception e)
         {
-            return new ResponseEntity<>(null,HttpStatus.INTERNAL_SERVER_ERROR);
+            return new ResponseEntity<>(e,HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
@@ -76,4 +76,5 @@ public class HomeController {
             return new ResponseEntity<>(e,HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
 }

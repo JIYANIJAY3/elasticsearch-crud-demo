@@ -3,6 +3,7 @@ package com.inexture.service;
 import com.inexture.model.Customer;
 import com.inexture.repo.CustomerRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.elasticsearch.core.SearchHit;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -38,5 +39,4 @@ public class CustomerServiceImpl implements CustomerService
     public void deleteCustomer(int id) {
         customerRepo.deleteById(id);
     }
-
 }
