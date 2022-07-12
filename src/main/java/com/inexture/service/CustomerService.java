@@ -1,7 +1,6 @@
 package com.inexture.service;
 
 import com.inexture.model.Customer;
-import org.springframework.data.elasticsearch.core.SearchHit;
 
 import java.util.List;
 import java.util.Optional;
@@ -18,5 +17,7 @@ public interface CustomerService {
 
     void deleteCustomer(int id);
 
-    Customer findByCity(String city);
+    List<Customer> findByCity(String city);
+
+    List<Customer> findByFirstName(String firstName,String lastName);
 }

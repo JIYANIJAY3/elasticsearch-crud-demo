@@ -1,5 +1,6 @@
 package com.inexture.controller;
 
+import com.inexture.dto.CustomerDto;
 import com.inexture.model.Customer;
 import com.inexture.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -77,11 +78,27 @@ public class HomeController {
         }
     }
 
-    @GetMapping(value = "/{city}")
-    public void findByCity(@PathVariable String city)
+    @GetMapping("/city/{city}")
+    public ResponseEntity<?> findByCity(@PathVariable String city)
     {
-        System.out.println(city);
-       // return "null";
+        try{
+            return new ResponseEntity<>(customerService.findByCity(city),HttpStatus.OK);
+        }
+        catch (Exception e)
+        {
+            return new ResponseEntity<>(e,HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
+    @GetMapping("/name")
+    public ResponseEntity<?> findByFirstName(@RequestBody CustomerDto customerDto)
+    {
+        try{
+            return new ResponseEntity<>(customerService.findByFirstName(customerDto.getFirstName(),customerDto.getLastName()),HttpStatus.OK);
+        }
+        catch (Exception e)
+        {
+            return new ResponseEntity<>(e,HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
 }
