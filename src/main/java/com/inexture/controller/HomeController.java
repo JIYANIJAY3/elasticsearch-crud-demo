@@ -77,4 +77,11 @@ public class HomeController {
         }
     }
 
+    @GetMapping(value = "/{city}")
+    public void findByCity(@PathVariable String city)
+    {
+        System.out.println(city);
+       // return "null";
+    }
+
 }

@@ -17,4 +17,6 @@ public interface CustomerService {
     Iterable<Customer> getAllCustomer();
 
     void deleteCustomer(int id);
+
+    Customer findByCity(String city);
 }
