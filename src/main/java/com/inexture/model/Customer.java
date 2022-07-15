@@ -21,6 +21,7 @@ public class Customer {
     private String firstName;
     private String lastName;
     private String email;
+    private long salary;
 
     @Field(type = FieldType.Nested)
     private CustomerAddress customerAddress;

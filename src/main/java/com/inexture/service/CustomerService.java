@@ -20,4 +20,10 @@ public interface CustomerService {
     List<Customer> findByCity(String city);
 
     List<Customer> findByFirstName(String firstName,String lastName);
+
+    List<Customer> findByState(String state);
+
+    List<Customer> findByAnything(String anything);
+
+    List<Customer> findByRegex(String regex);
 }
